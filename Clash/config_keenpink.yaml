@@ -182,9 +182,6 @@ proxy-groups:
       - KeenPinkAuto-c
       - KeenPinkAuto-d
       - KeenPinkAuto-z
-      # - AllSelect
-      # - AllAuto
-      # - AllFallback
 
   - name: "RuleMode"
     type: select
@@ -228,7 +225,6 @@ proxy-groups:
       - keenpink_myfilter-bb
       - keenpink_myfilter-bc
     proxies:
-      # - DIRECT
     # tolerance: 50
     # lazy: true
     url: 'http://www.gstatic.com/generate_204'
@@ -242,7 +238,6 @@ proxy-groups:
       - keenpink_myfilter-cc
       - keenpink_myfilter-cd
     proxies:
-      # - DIRECT
     # tolerance: 50
     # lazy: true
     url: 'http://www.gstatic.com/generate_204'
@@ -255,7 +250,6 @@ proxy-groups:
       - keenpink_myfilter-db
       - keenpink_myfilter-dc
     proxies:
-      # - DIRECT
     # tolerance: 50
     # lazy: true
     url: 'http://www.gstatic.com/generate_204'
@@ -266,81 +260,19 @@ proxy-groups:
     use:
       - keenpink_myfilter-za
     proxies:
-      # - DIRECT
     # tolerance: 50
     # lazy: true
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
 
-  # url-test select which proxy will be used by benchmarking speed to a URL.
-  # - name: "AllSelect"
-  #   type: select
-  #   # disable-udp: true
-  #   use:
-  #     - keenpink_myfilter-ba
-  #     - keenpink_myfilter-bb
-  #     - keenpink_myfilter-bc
-  #
-  #     - keenpink_myfilter-ca
-  #     - keenpink_myfilter-cb
-  #     - keenpink_myfilter-cc
-  #     - keenpink_myfilter-cd
-  #
-  #     - keenpink_myfilter-da
-  #     - keenpink_myfilter-db
-  #     - keenpink_myfilter-dc
-  #   proxies:
-  #
-  # - name: "AllAuto"
-  #   type: url-test
-  #   use:
-  #     - keenpink_myfilter-ba
-  #     - keenpink_myfilter-bb
-  #     - keenpink_myfilter-bc
-  #
-  #     - keenpink_myfilter-ca
-  #     - keenpink_myfilter-cb
-  #     - keenpink_myfilter-cc
-  #     - keenpink_myfilter-cd
-  #
-  #     - keenpink_myfilter-da
-  #     - keenpink_myfilter-db
-  #     - keenpink_myfilter-dc
-  #   proxies:
-  #     # - DIRECT
-  #   # tolerance: 50
-  #   # lazy: true
-  #   url: 'http://www.gstatic.com/generate_204'
-  #   interval: 300
-  #
-  # - name: "AllFallback"
-  #   type: fallback
-  #   use:
-  #     - keenpink_myfilter-ba
-  #     - keenpink_myfilter-bb
-  #     - keenpink_myfilter-bc
-  #
-  #     - keenpink_myfilter-ca
-  #     - keenpink_myfilter-cb
-  #     - keenpink_myfilter-cc
-  #     - keenpink_myfilter-cd
-  #
-  #     - keenpink_myfilter-da
-  #     - keenpink_myfilter-db
-  #     - keenpink_myfilter-dc
-  #   proxies:
-  #     # - DIRECT
-  #   # lazy: true
-  #   url: 'http://www.gstatic.com/generate_204'
-  #   interval: 300
-
+  # # url-test select which proxy will be used by benchmarking speed to a URL.
   # - name: "SelectProxy"
   #   type: select
   #   use:
   #   proxies:
   #     - DIRECT
-
-  # fallback selects an available policy by priority. The availability is tested by accessing an URL, just like an auto url-test group.
+  #
+  # # fallback selects an available policy by priority. The availability is tested by accessing an URL, just like an auto url-test group.
   # - name: "FallbackAuto"
   #   type: fallback
   #   use:
@@ -349,8 +281,8 @@ proxy-groups:
   #   # lazy: true
   #   url: 'http://www.gstatic.com/generate_204'
   #   interval: 300
-
-  # load-balance: The request of the same eTLD+1 will be dial to the same proxy.
+  #
+  # # load-balance: The request of the same eTLD+1 will be dial to the same proxy.
   # - name: "LoadBalance"
   #   type: load-balance
   #   use:
@@ -842,20 +774,22 @@ rules:
   # - PROCESS-NAME,v2ray,DIRECT
   # - PROCESS-NAME,v2ray.exe,DIRECT
   # ### Domain
+  - DOMAIN,raw.githubusercontent.com,PROXY
   # #### Basic
-  - DOMAIN-SUFFIX,raw.githubusercontent.com,PROXY
   - DOMAIN-SUFFIX,hcaptcha.com,PROXY
   - DOMAIN-SUFFIX,captcha.website,PROXY
 
   # #### Common
   - DOMAIN-SUFFIX,altapps.net,PROXY
   - DOMAIN-SUFFIX,v2rayse.com,PROXY
+  - DOMAIN-SUFFIX,bianyuan.xyz,PROXY
   - DOMAIN-SUFFIX,herokuapp.com,PROXY
   - DOMAIN-SUFFIX,bulink.xyz,PROXY
   - DOMAIN-SUFFIX,yugogo.xyz,PROXY
   - DOMAIN-SUFFIX,sspool.nl,PROXY
-  - DOMAIN-SUFFIX,swyjq.com,PROXY
   - DOMAIN-SUFFIX,bihai.cf,PROXY
+  - DOMAIN-SUFFIX,kingfu.cf,PROXY
+  - DOMAIN-SUFFIX,swyjq.com,PROXY
   - DOMAIN-SUFFIX,hax.co.id,PROXY
 
    # #### Temp
@@ -865,7 +799,6 @@ rules:
   - DOMAIN-SUFFIX,buyvm.net,PROXY
   - DOMAIN-SUFFIX,zxfast.com,PROXY
   - DOMAIN-SUFFIX,happykidsforum.org,PROXY
-  - DOMAIN-SUFFIX,bianyuan.xyz,PROXY
   - DOMAIN-SUFFIX,tiktokcdn.com,PROXY
 
   # ## No Custom
