@@ -184,6 +184,7 @@ proxy-groups:
       - YugogoAuto-c
       - YugogoAuto-d
       - YugogoAuto-z
+      - AllSelect
 
   - name: "RuleMode"
     type: select
@@ -290,6 +291,14 @@ proxy-groups:
     # lazy: true
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
+
+  - name: "AllSelect"
+    type: select
+    use:
+      - yugogo_myfilter-ba
+      - yugogo_myfilter-bb
+      - yugogo_myfilter-bc
+    proxies:
 
   # # url-test select which proxy will be used by benchmarking speed to a URL.
   # - name: "SelectProxy"
