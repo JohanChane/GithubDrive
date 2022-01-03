@@ -187,10 +187,10 @@ proxy-groups:
     type: url-test
     use:
     proxies:
-      # - KeenPinkAuto-b
+      - KeenPinkAuto-z
       - KeenPinkAuto-c
       - KeenPinkAuto-d
-      - KeenPinkAuto-z
+      # - KeenPinkAuto-b
     # tolerance: 50
     # lazy: true
     # url: 'https://www.gstatic.com/generate_204'
