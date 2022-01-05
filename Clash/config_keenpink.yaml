@@ -184,7 +184,7 @@ proxy-groups:
       - PROXY
 
   - name: "KeenPinkFallback-aa"
-    type: url-test
+    type: fallback
     use:
     proxies:
       - KeenPinkAuto-z

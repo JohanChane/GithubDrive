@@ -121,7 +121,7 @@ proxy-groups:
       - PROXY
 
   - name: "AllFallback-aa"
-    type: url-test
+    type: fallback
     use:
     proxies:
       - YugogoAuto-b
