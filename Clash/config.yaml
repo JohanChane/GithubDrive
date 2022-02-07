@@ -104,6 +104,7 @@ proxy-groups:
       - AllFallback-aa
       - AllAuto-aa
       - AllSelect
+      - SelectUs
       - YugogoAuto-b
       - YugogoAuto-c
       - YugogoAuto-d
@@ -159,6 +160,16 @@ proxy-groups:
     url: 'https://www.google.com'
     interval: 300
 
+  - name: "SelectUs"
+    type: select
+    use:
+      - yugogo_myfilter-cb
+    proxies:
+    # lazy: true
+    # url: 'http://www.gstatic.com/generate_204'
+    url: 'https://www.google.com'
+    interval: 300
+
   - name: "YugogoAuto-b"
     type: url-test
     use:
@@ -173,6 +184,7 @@ proxy-groups:
     type: url-test
     use:
       - yugogo_myfilter-ca
+      - yugogo_myfilter-cb
     proxies:
     # tolerance: 50
     # lazy: true
@@ -213,8 +225,19 @@ proxy-providers:
 
   yugogo_myfilter-ca:
     type: http
-    url: "https://sspool.herokuapp.com/clash/proxies?type=vmess,ssr,trojan&c=SG,CA,RU,AU,CH,DE,FR,GD,NL,JP,US"
+    url: "https://sspool.herokuapp.com/clash/proxies?type=vmess,ssr,trojan&c=SG,CA,RU,AU,CH,DE,FR,GD,NL,JP"
     path: ./proxy-providers/yugogo/myfilter-ca.yaml
+    interval: 3600
+    health-check:
+      enable: true
+      interval: 600
+      # lazy: true
+      url: http://www.gstatic.com/generate_204
+
+  yugogo_myfilter-cb:
+    type: http
+    url: "https://sspool.herokuapp.com/clash/proxies?type=vmess,ssr,trojan&c=US"
+    path: ./proxy-providers/yugogo/myfilter-cb.yaml
     interval: 3600
     health-check:
       enable: true
